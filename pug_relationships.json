@@ -1,0 +1,24 @@
+{
+  "relationshipTypes": [
+    {
+      "name": "HAS_ROLE",
+      "startNodeType": "PugUser",
+      "endNodeType": "PugRole"
+    },
+    {
+      "name": "GRANTS_PERMISSION",
+      "startNodeType": "PugRole",
+      "endNodeType": "PugPermission"
+    },
+    {
+      "name": "REQUIRES_PERMISSION",
+      "startNodeType": "PugApplication",
+      "endNodeType": "PugPermission"
+    },
+    {
+      "name": "HAS_ACCESS",
+      "startNodeType": "PugUser",
+      "endNodeType": "PugApplication"
+    }
+  ]
+}

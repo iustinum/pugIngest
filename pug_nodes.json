@@ -1,0 +1,34 @@
+{
+  "nodeTypes": [
+    {
+      "name": "PugUser",
+      "properties": {
+        "id": { "type": "string" },
+        "Username": { "type": "string" },
+        "Email": { "type": "string" }
+      }
+    },
+    {
+      "name": "PugApplication",
+      "properties": {
+        "id": { "type": "string" },
+        "AppName": { "type": "string" },
+        "URL": { "type": "string" }
+      }
+    },
+    {
+      "name": "PugRole",
+      "properties": {
+        "id": { "type": "string" },
+        "RoleName": { "type": "string" }
+      }
+    },
+    {
+      "name": "PugPermission",
+      "properties": {
+        "id": { "type": "string" },
+        "PermissionName": { "type": "string" }
+      }
+    }
+  ]
+}

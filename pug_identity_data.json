@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {"type": "PugUser", "properties": {"id": "User1", "Username": "Alice", "Email": "alice@example.com"}},
+    {"type": "PugUser", "properties": {"id": "User2", "Username": "Bob", "Email": "bob@example.com"}},
+    {"type": "PugApplication", "properties": {"id": "App1", "AppName": "Email", "URL": "https://email.example.com"}},
+    {"type": "PugApplication", "properties": {"id": "App2", "AppName": "HR Portal", "URL": "https://hr.example.com"}},
+    {"type": "PugRole", "properties": {"id": "Role1", "RoleName": "AdminRole"}},
+    {"type": "PugRole", "properties": {"id": "Role2", "RoleName": "UserRole"}},
+    {"type": "PugPermission", "properties": {"id": "Permission1", "PermissionName": "Read"}},
+    {"type": "PugPermission", "properties": {"id": "Permission2", "PermissionName": "Write"}}
+  ],
+  "relationships": [
+    {"type": "HAS_ROLE", "startNode": "PugUser:User1", "endNode": "PugRole:Role1"},
+    {"type": "HAS_ROLE", "startNode": "PugUser:User2", "endNode": "PugRole:Role2"},
+    {"type": "GRANTS_PERMISSION", "startNode": "PugRole:Role1", "endNode": "PugPermission:Permission1"},
+    {"type": "GRANTS_PERMISSION", "startNode": "PugRole:Role1", "endNode": "PugPermission:Permission2"},
+    {"type": "GRANTS_PERMISSION", "startNode": "PugRole:Role2", "endNode": "PugPermission:Permission1"},
+    {"type": "REQUIRES_PERMISSION", "startNode": "PugApplication:App2", "endNode": "PugPermission:Permission2"},
+    {"type": "REQUIRES_PERMISSION", "startNode": "PugApplication:App1", "endNode": "PugPermission:Permission1"},
+    {"type": "HAS_ACCESS", "startNode": "PugUser:User1", "endNode": "PugApplication:App1"},
+    {"type": "HAS_ACCESS", "startNode": "PugUser:User1", "endNode": "PugApplication:App2"},
+    {"type": "HAS_ACCESS", "startNode": "PugUser:User2", "endNode": "PugApplication:App1"}
+  ]
+}
