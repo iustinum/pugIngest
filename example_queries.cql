@@ -1,5 +1,10 @@
 // Example Queries
 
+// Visualize the Graph, showing all nodes and relationships
+MATCH (n)
+OPTIONAL MATCH (n)-[r]->(m)
+RETURN n, r, m;
+
 // Find all applications a user has access to
 MATCH (u:PugUser {Username: 'Alice'})-[:HAS_ACCESS]->(a:PugApplication)
 RETURN u.Username, collect(a.AppName) AS AccessibleApps;

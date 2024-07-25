@@ -1,3 +1,7 @@
+// Cypher queries to manually ingest instance data
+
+// Example: pug_identity_data.json
+
 // Step 1: Create Constraints
 CREATE CONSTRAINT IF NOT EXISTS FOR (u:PugUser) REQUIRE u.id IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (a:PugApplication) REQUIRE a.id IS UNIQUE;
@@ -66,9 +70,3 @@ MATCH ()-[r:HAS_ROLE]->() RETURN count(r) AS HasRoleCount;
 MATCH ()-[r:GRANTS_PERMISSION]->() RETURN count(r) AS GrantsPermissionCount;
 MATCH ()-[r:REQUIRES_PERMISSION]->() RETURN count(r) AS RequiresPermissionCount;
 MATCH ()-[r:HAS_ACCESS]->() RETURN count(r) AS HasAccessCount;
-
-// Step 11: Visualize the Graph
-// This will show all nodes and relationships
-MATCH (n)
-OPTIONAL MATCH (n)-[r]->(m)
-RETURN n, r, m;
