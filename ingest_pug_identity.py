@@ -4,7 +4,7 @@ from neo4j import GraphDatabase
 # Neo4j connection details
 URI = "neo4j://localhost:7687"
 USER = "neo4j"
-PASSWORD = ""
+PASSWORD = "" # set password here
 
 def connect_to_neo4j():
     return GraphDatabase.driver(URI, auth=(USER, PASSWORD))
